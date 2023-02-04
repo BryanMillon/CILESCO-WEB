@@ -11,7 +11,7 @@ import Video from "./components/Video";
 function App() {
   return (
     <BrowserRouter>
-         <div className="bg-[#50B7B8] h-screen overflow-x-auto relative " >
+         <div className="bg-[#50B7B8] h-screen overflow-x-hidden relative scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F98D00]  " >
             <Route path="/" component={NavBar} />
             <Switch>
                <Route exact path="/" component={Inicio} />

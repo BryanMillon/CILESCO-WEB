@@ -13,20 +13,20 @@ const Diccionario = () => {
 
   useEffect(() => {
     const fetchVideos = async () => {
-      const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCNYW2vfGrUE6R5mIJYzkRyQ&maxResults=50&key=AIzaSyCdRuNg_ME6F_c1oOhESVnRXtQxAtCABUE`);
+      const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCpq5Rs0AvAjNgWfDDVBWEuA&maxResults=50&key=AIzaSyCdRuNg_ME6F_c1oOhESVnRXtQxAtCABUE`);
       const data = await response.json();
       setVideos(data.items.map(item => {
         return {
           id: item.id.videoId,
           title: item.snippet.title,
-          thumbnail: item.snippet.thumbnails.default.url
+          thumbnail: item.snippet.thumbnails.high.url
         };
       }));
     };
 
     fetchVideos();
   }, []);
-  
+
   // useEffect(() => {
   //   const fetchVideos = async (pageToken = "") => {
   //     const response = await fetch(
@@ -75,14 +75,18 @@ const Diccionario = () => {
 <div class="flex justify-center pt-10">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 ">
     {videos.map(video => (
-      <div class="rounded-lg shadow-lg bg-white min-w-0 max-w-sm transition-all duration-300 transform hover:scale-110">
+      <motion.div 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 2 }}
+      class="rounded-lg shadow-lg bg-white min-w-0 max-w-sm transition-all duration-300 transform hover:scale-110">
         <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
           <img class="rounded-t-lg w-full h-64 object-cover min-h-0" src={video.thumbnail} alt="" />
         </a>
         <div class="p-6">
           <h5 class="text-gray-900 text-xl font-medium mb-2">{video.title}</h5>
         </div>
-      </div>
+      </motion.div>
     ))}
   </div>
 </div>
