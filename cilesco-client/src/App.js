@@ -11,9 +11,8 @@ import Video from "./components/Video";
 function App() {
   return (
     <BrowserRouter>
-         <div className="bg-[#50B7B8] h-screen" >
+         <div className="bg-[#50B7B8] h-screen overflow-x-auto relative " >
             <Route path="/" component={NavBar} />
-            <Route path="/" component={Footer}/>
             <Switch>
                <Route exact path="/" component={Inicio} />
                <Route path="/contacto" component={Contacto} />

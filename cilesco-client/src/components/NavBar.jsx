@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
@@ -9,12 +10,16 @@ const NavBar = () => {
   }
 
   return (
-    <nav className="bg-[#6E28AC] px-2 sm:px-4 py-2.5 rounded">
+    <nav className="bg-[#6E28AC] px-2 sm:px-4 py-2.5 rounded sticky top-0 z-20">
       <div className="container flex flex-wrap items-center justify-between mx-auto">
-        <img
+        <motion.img
+         initial={{ opacity: 0 }}
+         whileInView={{opacity: 1 }}
+         viewport={{ once: true }}
+         transition={{ duration: 2 }}
           src="/CILESCO_LOGO.png"
-          className="object-cover h-14 mr-3 sm:h-16"
-          alt="Flowbite Logo"
+          className="object-cover h-14 mr-3 sm:h-16 rounded-full border border-white "
+          alt="Logo"
         />
 
         <button
@@ -40,7 +45,12 @@ const NavBar = () => {
             ></path>
           </svg>
         </button>
-        <div className="hidden w-full text-center   md:block md:w-auto" id="navbar-default">
+        <motion.div 
+          initial={{ x: 200, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2 }}
+        className="hidden w-full text-center   md:block md:w-auto" id="navbar-default">
           <ul className="flex flex-col p-4 mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
             <li>
               <Link
@@ -71,7 +81,7 @@ const NavBar = () => {
               </Link>
             </li>
           </ul>
-        </div>
+        </motion.div>
       </div>
     </nav>
   );

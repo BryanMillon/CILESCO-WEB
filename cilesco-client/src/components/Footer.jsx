@@ -7,7 +7,7 @@ const Footer = () => {
         return date.getFullYear();
       }
   return (
-    <footer className="w-full p-2 bg-[#F98D00] sm:p-4 fixed bottom-0">
+    <footer className="w-full absolute bottom-0 p-2 bg-[#F98D00] sm:p-4 ">
     <div className="sm:flex sm:items-center sm:justify-between">
         <span className="text-sm flex justify-center text-white sm:text-center ">© {currentYear()} CILESCO. Todos los derechos reservados.
         </span>
