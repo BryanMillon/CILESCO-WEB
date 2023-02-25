@@ -11,21 +11,21 @@ const Diccionario = () => {
   const [videos, setVideos] = useState([]);
 
 
-  useEffect(() => {
-    const fetchVideos = async () => {
-      const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCpq5Rs0AvAjNgWfDDVBWEuA&maxResults=50&key=AIzaSyCdRuNg_ME6F_c1oOhESVnRXtQxAtCABUE`);
-      const data = await response.json();
-      setVideos(data.items.map(item => {
-        return {
-          id: item.id.videoId,
-          title: item.snippet.title,
-          thumbnail: item.snippet.thumbnails.high.url
-        };
-      }));
-    };
+  // useEffect(() => {
+  //   const fetchVideos = async () => {
+  //     const response = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCpq5Rs0AvAjNgWfDDVBWEuA&maxResults=50&key=AIzaSyCdRuNg_ME6F_c1oOhESVnRXtQxAtCABUE`);
+  //     const data = await response.json();
+  //     setVideos(data.items.map(item => {
+  //       return {
+  //         id: item.id.videoId,
+  //         title: item.snippet.title,
+  //         thumbnail: item.snippet.thumbnails.high.url
+  //       };
+  //     }));
+  //   };
 
-    fetchVideos();
-  }, []);
+  //   fetchVideos();
+  // }, []);
 
   // useEffect(() => {
   //   const fetchVideos = async (pageToken = "") => {
@@ -47,6 +47,14 @@ const Diccionario = () => {
   //   fetchVideos();
   // }, []);
 
+  useEffect(() => {
+    fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PL8U3KWmv0o9Jsx2-GoWYMQNEqMENPXmmH&maxResults=50&key=AIzaSyCdRuNg_ME6F_c1oOhESVnRXtQxAtCABUE`)
+      .then(response => response.json())
+      .then(data => {
+        setVideos(data.items);
+      })
+      .catch(error => console.error(error));
+  }, []);
 
 
   return (
@@ -81,10 +89,10 @@ const Diccionario = () => {
       transition={{ duration: 2 }}
       class="rounded-lg shadow-lg bg-white min-w-0 max-w-sm transition-all duration-300 transform hover:scale-110">
         <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-          <img class="rounded-t-lg w-full h-64 object-cover min-h-0" src={video.thumbnail} alt="" />
+          <img class="rounded-t-lg w-full h-64 object-cover min-h-0" src={video.snippet.thumbnails.high.url} alt="" />
         </a>
         <div class="p-6">
-          <h5 class="text-gray-900 text-xl font-medium mb-2">{video.title}</h5>
+          <h5 class="text-gray-900 text-xl font-medium mb-2">{video.snippet.title}</h5>
         </div>
       </motion.div>
     ))}
