@@ -16,8 +16,8 @@ function App() {
             <Switch>
                <Route exact path="/" component={Inicio} />
                <Route path="/contacto" component={Contacto} />
-               <Route path="/diccionario" component={Diccionario} />
-               <Route path="/diccionario/id" component={Video} />
+               <Route exact path="/diccionario" component={Diccionario} />
+               <Route path="/diccionario/:id" component={Video} />
                <Route path="*" component={Error404} />
               
             </Switch>
