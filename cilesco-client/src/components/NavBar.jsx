@@ -39,9 +39,9 @@ const NavBar = () => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
           </svg>
         </button>
@@ -69,6 +69,15 @@ const NavBar = () => {
                 onClick={handleMenu}
               >
                 Diccionario
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/preguntasfrecuentes"
+                className={`block py-2 pl-3 pr-4 text-white rounded ${location.pathname === '/Contacto' ? 'md:text-[#F98D00]' : 'md:text-white'} hover:text-[#F98D00] md:p-0`}
+                onClick={handleMenu}
+              >
+                Preguntas Frecuentes
               </Link>
             </li>
             <li>
