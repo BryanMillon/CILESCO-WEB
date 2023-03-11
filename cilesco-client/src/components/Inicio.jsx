@@ -1,9 +1,20 @@
 import React from 'react'
 import Footer from './Footer'
-import { Link} from "react-router-dom";
 import { motion } from "framer-motion";
 
+
 const Inicio = () => {
+
+  const handleClickC = () => {
+    window.location.href = '/preguntasfrecuentes';
+    window.scrollTo(0, 0);
+  };
+
+    const handleClickD = () => {
+    window.location.href = '/diccionario';
+    window.scrollTo(0, 0);
+  };
+  
   return (
     <div className='bg-[#50B7B8]  min-h-screen pt-6 md:pt-12 pb-24  relative  '>
       <section className='flex flex-col text-center space-y-6 justify-center md:pl-12 items-center md:flex-row w-full'>
@@ -21,12 +32,12 @@ const Inicio = () => {
           El diccionario digital de CILESCO está creado a partir del contenido generado por el instituto y tiene como objetivo reunir en un solo lugar todas las señas de dicho material, lo que lo convierte en una herramienta muy valiosa para acompañar el aprendizaje y la práctica de la lengua. Además, este diccionario digital facilita la búsqueda de las señas, lo que ayuda a los estudiantes a encontrar rápidamente la información que necesitan para aprender y mejorar su conocimiento de LESCO.
           </p>
           <div className='md:space-x-5 flex flex-col md:flex-row'>
-          <Link to='/diccionario' className='focus:outline-none text-white bg-[#6E28AC] hover:bg-[#F98D00] font-medium rounded-lg text-sm px-5 py-2.5 mb-2 w-full md:w-3/6'>
+          <button onClick={handleClickD} className='focus:outline-none text-white bg-[#6E28AC] hover:bg-[#F98D00] font-medium rounded-lg text-sm px-5 py-2.5 mb-2 w-full md:w-3/6'>
             Diccionario  
-          </Link>
-          <Link to='/preguntasfrecuentes'  className="focus:outline-none text-white bg-[#6E28AC] hover:bg-[#F98D00] font-medium rounded-lg text-sm px-5 py-2.5 mb-2 w-full md:w-3/6">
+          </button>
+          <button onClick={handleClickC} className="focus:outline-none text-white bg-[#6E28AC] hover:bg-[#F98D00] font-medium rounded-lg text-sm px-5 py-2.5 mb-2 w-full md:w-3/6">
           ¿Qué hace CILESCO-Oi2?
-          </Link>
+          </button>
            
           </div>
         </motion.div>

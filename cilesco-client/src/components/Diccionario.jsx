@@ -47,9 +47,10 @@ const Diccionario = () => {
   return (
     <div className='bg-[#50B7B8]  min-h-screen pt-12 pb-24 relative'>
        <motion.h2 
-         initial={{ opacity: 0 }}
-         whileInView={{ opacity: 1 }}
-         transition={{ duration: 1.5 }}
+        initial={{ y: -100, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5 }}
          className=" text-3xl text-center font-bold tracking-wide text-white sm:text-4xl mb-12">
            DICCIONARIO CILESCO
           </motion.h2>
@@ -66,22 +67,22 @@ const Diccionario = () => {
  />
 </div>
 
-<div class="flex justify-center pt-10">
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 px-6">
+<div className="flex justify-center pt-10">
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 px-6">
     {currentVideo.map(video => (
       <motion.div 
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 2 }}
-      class="rounded-lg shadow-lg bg-white min-w-0 max-w-sm transition-all duration-300 transform hover:scale-110"
+      className="rounded-lg shadow-lg bg-white min-w-0 max-w-sm transition-all duration-300 transform hover:scale-110"
       key={video._id}
       >
       
         <Link to={`/diccionario/${video._id}`} data-mdb-ripple="true" data-mdb-ripple-color="light">
-          <img class="rounded-t-lg w-full h-64 object-cover min-h-0" src={video.thumbnail} alt="" />
+          <img className="rounded-t-lg w-full h-64 object-cover min-h-0" src={video.thumbnail} alt="" />
         </Link>
-        <div class="p-6">
-          <h5 class="text-gray-900 text-xl font-medium mb-2">{video.title}</h5>
+        <div className="p-6">
+          <h5 className="text-gray-900 text-xl font-medium mb-2">{video.title}</h5>
         </div>
       </motion.div>
     ))}

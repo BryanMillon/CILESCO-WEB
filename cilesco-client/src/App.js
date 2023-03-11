@@ -15,8 +15,8 @@ function App() {
             <Route path="/" component={NavBar} />
             <Switch>
                <Route exact path="/" component={Inicio} />
-               <Route path="/contacto" component={Contacto} />
-               <Route path="/preguntasfrecuentes" component={Preguntas}/>
+               <Route exact path="/contacto" component={Contacto} />
+               <Route exact path="/preguntasfrecuentes" component={Preguntas}/>
                <Route exact path="/diccionario" component={Diccionario} />
                <Route path="/diccionario/:id" component={Video} />
                <Route path="*" component={Error404} />
