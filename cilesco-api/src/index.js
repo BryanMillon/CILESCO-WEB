@@ -13,6 +13,7 @@ const port = process.env.PORT || 9000;
 
 
 //middleware
+app.use(cors());
 app.use('/api', videoRoutes)
 app.use(express.json())
 app.use(morgan("dev"));
