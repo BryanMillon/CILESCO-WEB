@@ -3,10 +3,9 @@ import './App.css';
 import Contacto from "./components/Contacto";
 import Diccionario from "./components/Diccionario";
 import Error404 from "./components/Error404";
-import Footer from "./components/Footer";
 import Inicio from "./components/Inicio";
 import NavBar from "./components/NavBar";
-import Video from "./components/Video";
+import {Preguntas}  from "./components/Preguntas";
 
 function App() {
   return (
@@ -15,9 +14,9 @@ function App() {
             <Route path="/" component={NavBar} />
             <Switch>
                <Route exact path="/" component={Inicio} />
-               <Route path="/contacto" component={Contacto} />
-               <Route path="/diccionario" component={Diccionario} />
-               <Route path="/diccionario/id" component={Video} />
+               <Route exact path="/contacto" component={Contacto} />
+               <Route exact path="/preguntasfrecuentes" component={Preguntas}/>
+               <Route exact path="/diccionario" component={Diccionario} />
                <Route path="*" component={Error404} />
               
             </Switch>

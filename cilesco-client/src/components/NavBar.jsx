@@ -17,7 +17,7 @@ const NavBar = () => {
          whileInView={{opacity: 1 }}
          viewport={{ once: true }}
          transition={{ duration: 2 }}
-          src="/CILESCO_LOGO.png"
+          src="/IMG/LOGO-WEB.png"
           className="object-cover h-14 mr-3 sm:h-16 rounded-full border border-white "
           alt="Logo"
         />
@@ -39,9 +39,9 @@ const NavBar = () => {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             ></path>
           </svg>
         </button>
@@ -53,32 +53,41 @@ const NavBar = () => {
         className="hidden w-full text-center   md:block md:w-auto" id="navbar-default">
           <ul className="flex flex-col p-4 mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
             <li>
-              <Link
-                to="/"
+              <a
+                href='/'
                 className={`block py-2 pl-3 pr-4 text-white rounded ${location.pathname === '/' ? 'md:text-[#F98D00]' : 'md:text-white'} hover:text-[#F98D00] md:p-0`}
                 aria-current="page"
                 onClick={handleMenu}
               >
                 Inicio
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
-                to="Diccionario"
+              <a
+                href="/Diccionario"
                 className={`block py-2 pl-3 pr-4 text-white rounded ${location.pathname === '/Diccionario' ? 'md:text-[#F98D00]' : 'md:text-white'} hover:text-[#F98D00] md:p-0`}
                 onClick={handleMenu}
               >
                 Diccionario
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
-                to="/Contacto"
+              <a
+                href="/preguntasfrecuentes"
+                className={`block py-2 pl-3 pr-4 text-white rounded ${location.pathname === '/preguntasfrecuentes' ? 'md:text-[#F98D00]' : 'md:text-white'} hover:text-[#F98D00] md:p-0`}
+                onClick={handleMenu}
+              >
+                Preguntas Frecuentes
+              </a>
+            </li>
+            <li>
+              <a
+                href="/Contacto"
                 className={`block py-2 pl-3 pr-4 text-white rounded ${location.pathname === '/Contacto' ? 'md:text-[#F98D00]' : 'md:text-white'} hover:text-[#F98D00] md:p-0`}
                 onClick={handleMenu}
               >
                 Contacto
-              </Link>
+              </a>
             </li>
           </ul>
         </motion.div>

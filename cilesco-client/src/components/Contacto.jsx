@@ -60,7 +60,7 @@ const features2 = [
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.2 }}
-           src="CILESCO_LOGO.png" alt="" className='w-28 h-28 sm:w-36 sm:h-36  border-white rounded-full border-4 mx-auto' />
+           src="/IMG/LOGO-WEB.png" alt="" className='w-28 h-28 sm:w-36 sm:h-36  border-white rounded-full border-4 mx-auto' />
         <h2 className="mt-2 text-3xl text-center font-bold tracking-wide text-white sm:text-4xl mb-12">
            Centro Integral de LESCO
           </h2>
@@ -154,7 +154,7 @@ const features2 = [
                  initial={{ x: 200, opacity: 0 }}
                  whileInView={{ x: 0, opacity: 1 }}
                  viewport={{ once: true }}
-                 transition={{ duration: 2 }}
+                 transition={{ duration: 2.5 }}
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.9621125292683!2d-84.07387178571841!3d9.937110476841674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e30baab35aad%3A0x705bce7c3333bc3e!2sCILESCO%20Centro%20integral%20de%20LESCO!5e0!3m2!1ses!2scr!4v1675398421592!5m2!1ses!2scr" style={{border: 0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className='w-72 h-72 sm:w-96 sm:h-96 mx-auto' />
           </dl>
           
