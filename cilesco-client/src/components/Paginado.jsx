@@ -8,6 +8,7 @@ const Paginado = ({ nextPage, prevPage, currentPage, videosPerPage, allVideos}) 
     pageNumbers.push(i);
   }
   
+  
   return (
     <div className="flex justify-center space-x-2">
      

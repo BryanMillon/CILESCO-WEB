@@ -46,7 +46,7 @@ const Inicio = () => {
            whileInView={{ x: 0, opacity: 1 }}
            viewport={{ once: true }}
            transition={{ duration: 1.2 }}
-          src="IMG/CANVA-2-WEB.png" className="w-3/5 h-3/5 md:w-2/5 md:2/5 md:pr-12" alt='landing-img'/>
+          src="IMG/CANVA-2-WEB.png" className="w-3/5 h-3/5 md:w-2/5 md:h-2/5 md:pr-12" alt='landing-img'/>
       </section>
    
 

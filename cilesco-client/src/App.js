@@ -5,7 +5,6 @@ import Diccionario from "./components/Diccionario";
 import Error404 from "./components/Error404";
 import Inicio from "./components/Inicio";
 import NavBar from "./components/NavBar";
-import Video from "./components/Video";
 import {Preguntas}  from "./components/Preguntas";
 
 function App() {
@@ -18,7 +17,6 @@ function App() {
                <Route exact path="/contacto" component={Contacto} />
                <Route exact path="/preguntasfrecuentes" component={Preguntas}/>
                <Route exact path="/diccionario" component={Diccionario} />
-               <Route path="/diccionario/:id" component={Video} />
                <Route path="*" component={Error404} />
               
             </Switch>
