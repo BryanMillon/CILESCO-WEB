@@ -4,7 +4,7 @@ require("dotenv").config();
 const morgan = require("morgan");
 const bodyParser = require('body-parser');
 const cors = require("cors");
-const videoRoutes = require("./routes/videos.js")
+const videoRoutes = require("./src/routes/videos.js")
 
 
 
