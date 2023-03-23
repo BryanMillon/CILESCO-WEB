@@ -4,7 +4,7 @@ import axios from 'axios'
 export function getVideos(){
     return  async function(dispatch){
         try {
-            let json = await axios.get("http://localhost:9000/api/videos/")
+            let json = await axios.get("https://cilesco-web-api.vercel.app/api/videos/")
             return dispatch({
                 type: 'GET_VIDEOS',
                 payload:json.data
@@ -18,7 +18,7 @@ export function getVideos(){
 export function getNameVideo(query){
     return async function(dispatch){
        try {
-           let json = await axios.get(`http://localhost:9000/api/videos?query=${query}`)
+           let json = await axios.get(`https://cilesco-web-api.vercel.app/api/videos?query=${query}`)
            return dispatch({
             type: 'GET_NAME_VIDEOS',
             payload:json.data
@@ -32,7 +32,7 @@ export function getNameVideo(query){
 export function getVideoDetail(id){
         return async function(dispatch){
             try {
-                let json = await axios.get(`http://localhost:9000/api/videos/${id}`)
+                let json = await axios.get(`https://cilesco-web-api.vercel.app/api/videos/${id}`)
                 return dispatch({
                     type:'GET_VIDEO_DETAIL',
                     payload: json.data
