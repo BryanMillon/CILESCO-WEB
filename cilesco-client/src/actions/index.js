@@ -1,5 +1,5 @@
 import axios from 'axios'
-
+import { toast } from 'react-hot-toast';
 
 export function getVideos(){
     return  async function(dispatch){
@@ -24,7 +24,8 @@ export function getNameVideo(query){
             payload:json.data
            })
        } catch (error) {
-        return console.log(error)
+        return toast.error("Lo sentimos no se encontro la palabra que buscas", {
+            duration: 3500,})
        }
     }    
 }

@@ -56,7 +56,7 @@ router.get("/videos", async (req, res) => {
             )
             .map((item) => {
               const videoId = item.snippet.resourceId.videoId;
-              const title = item.snippet.title;
+              const title = item.snippet.title.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
               const thumbnail =
                 item.snippet.thumbnails.high && item.snippet.thumbnails.high.url
                   ? item.snippet.thumbnails.high.url

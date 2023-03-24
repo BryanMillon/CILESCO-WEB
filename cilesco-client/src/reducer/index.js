@@ -11,6 +11,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         videos: action.payload,
+        allVideos: action.payload
       };
     case "GET_NAME_VIDEOS":
       return {
