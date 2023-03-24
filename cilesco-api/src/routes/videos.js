@@ -22,7 +22,7 @@ router.get("/videos", async (req, res) => {
     }
 
     // Perform expensive operation and store result in cache
-    const regex = new RegExp(query, "i");
+    const regex = new RegExp(query.normalize('NFD').replace(/[\u0301\u0308]/g, ''), "i");
     const videos = await videoSchema
       .find({ title: regex })
       .sort({ title: 1 })
@@ -56,7 +56,7 @@ router.get("/videos", async (req, res) => {
             )
             .map((item) => {
               const videoId = item.snippet.resourceId.videoId;
-              const title = item.snippet.title.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+              const title = item.snippet.title.normalize('NFD').replace(/[\u0301\u0308]/g, '');;
               const thumbnail =
                 item.snippet.thumbnails.high && item.snippet.thumbnails.high.url
                   ? item.snippet.thumbnails.high.url
