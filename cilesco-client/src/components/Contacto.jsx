@@ -41,13 +41,13 @@ const features2 = [
   {
     name: 'Presencial',
     description:
-      "Lunes, Miercoles y Jueves de 1:00 P.M a 9:00 P.M / Sabado 8:00 A.M a 5:00 P.M",
+      "Lunes a Viernes de 2:00 P.M a 9:00 P.M / Sabado 8:00 A.M a 12:00 M.D",
     icon: UserIcon,
   },
   {
     name: 'Virtual',
     description:
-      'Lunes a Sabado de 8:00 A.M a 9:00 P.M',
+      'Lunes a Viernes de 2:00 P.M a 9:00 P.M /  Sabado 8:00 A.M a 3:00 P.M',
     icon: ComputerDesktopIcon,
   },
 ]
