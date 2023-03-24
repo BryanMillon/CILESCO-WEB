@@ -37,7 +37,7 @@ export const SearchBar = ({ pageOne }) => {
         >
           Search
         </label>
-        <div className="relative max-w-[75%] mx-auto">
+        <div className="relative max-w-[80%] md:max-w-[75%]  mx-auto">
           <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
             <svg
               aria-hidden="true"
