@@ -79,7 +79,7 @@ const Diccionario = () => {
 
         <SearchBar pageOne={pageOne} />
 
-        <div className="w-full text-center flex flex-col md:flex-row md:pt-5 pt-8 md:space-x-12 justify-center items-center mx-5 ">
+        <div className="w-full text-center flex flex-col md:flex-row md:pt-5 pt-8 md:space-x-12 justify-center items-center md:mx-5 ">
           <button
             className="bg-white w-[75%] md:w-auto text-[#50B7B8]  font-bold py-2 md:px-4 rounded-lg "
             onClick={() => handleAllVideos()}
