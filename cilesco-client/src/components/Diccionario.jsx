@@ -84,7 +84,7 @@ const Diccionario = () => {
             className="bg-white w-[75%] md:w-auto text-[#50B7B8]  font-bold py-2 md:px-4 rounded-lg "
             onClick={() => handleAllVideos()}
           >
-            Traer todas las palabras
+            Mostrar todas las palabras
           </button>
           <p className=" bg-[#50B7B8] w-[75%] md:w-auto text-white font-bold py-2 md:px-4 rounded-lg ">
             Total de palabras en el diccionario {videos2.length}
